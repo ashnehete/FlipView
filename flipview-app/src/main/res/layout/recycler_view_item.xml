@@ -15,12 +15,12 @@
 		android:padding="4dp"
 		android:clipToPadding="false"
 		android:clickable="true"
-		app:checked="false"
-		app:enableInitialAnimation="true"
-		app:frontLayout="@layout/flipview_front_custom_text"
-		app:frontBackgroundColor="@color/colorPrimary"
-		app:rearLayout="@layout/flipview_rear_custom"
-		app:rearBackgroundColor="@color/colorAccent"
-		app:rearImageAnimationDelay="0"/>
+		app:fv_checked="false"
+		app:fv_enableInitialAnimation="true"
+		app:fv_frontLayout="@layout/flipview_front_custom_text"
+		app:fv_frontBackgroundColor="@color/colorPrimary"
+		app:fv_rearLayout="@layout/flipview_rear_custom"
+		app:fv_rearBackgroundColor="@color/colorAccent"
+		app:fv_rearImageAnimationDelay="0"/>
 
 </FrameLayout>

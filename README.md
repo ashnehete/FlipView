@@ -4,6 +4,10 @@
 
 ###### GMail like View & beyond - Master branch: v1.1.1 of 2016.04.07
 
+#### Changes in this fork
+Added prefix (fv_) to all the attributes to avoid name clashes in a project using different
+libraries with attributes having same name.
+
 #### Concept
 FlipView is a ViewGroup (FrameLayout) that is designed to display 2 views/layouts by flipping
 the front one in favor of the back one, and vice versa. Optionally more views can be
@@ -69,27 +73,27 @@ Supported attributes with _default_ values:
 | **FlipView** ||
 |:---|:---|
 | `android:clickable="false"` | **(!!)** Set this if you want view reacts to the tap and animate it.
-| `app:checked="false"` | Whether or not this component is showing rear layout at startup.
-| `app:animateDesignLayoutOnly="false"` | true, animate front and rear layouts from settings + child views; false, exclude all layouts and animate _only_ child views from design layout if any. (This attribute cannot be changed at runtime).
-| `app:animationDuration="100"` | Set the main animation duration.
-| `app:anticipateInAnimationTime="0"` | Anticipate the beginning of InAnimation, this time is already subtracted from the main duration (new delay is: main duration - anticipation time).
-| `app:enableInitialAnimation="false"` | Whether or not the initial animation should start at the beginning.
-| `app:initialLayoutAnimation="@anim/scale_up"` | Starting animation.
-| `app:initialLayoutAnimationDuration="250"` | Starting animation duration.
-| `app:frontLayout="@layout/flipview_front"` | Front view layout resource (for checked state -> false).
-| `app:frontBackground="<OvalShape Drawable generated programmatically>"` | Front drawable resource (for checked state -> false).
-| `app:frontBackgroundColor="<Color.GRAY set programmatically>"` | Front view color resource (for checked state -> false).
-| `app:frontImage="@null"` | Front image resource (for checked state -> false).
-| `app:frontImagePadding="0dp"` | Front image padding.
-| `app:rearLayout="@layout/flipview_rear"` | Rear view layout resource (for checked state -> true).
-| `app:rearBackground="<OvalShape Drawable generated programmatically>"` | Rear drawable resource (for checked state -> true).
-| `app:rearBackgroundColor="Color.GRAY set programmatically"` | Rear view color resource (for checked state -> true).
-| `app:rearImage="@drawable/ic_action_done"` | Rear accept image resource.
-| `app:rearImagePadding="0dp"` | Rear image padding.
-| `app:animateRearImage="true"` | Whether or not the rear image should animate.
-| `app:rearImageAnimation="@anim/scale_up"` | Rear image animation.
-| `app:rearImageAnimationDuration="150"` | Rear image animation duration.
-| `app:rearImageAnimationDelay="animationDuration"` | Rear image animation delay (depends the animation/duration it can be smart setting a specific delay. For Gmail effect set this to 0).
+| `app:fv_checked="false"` | Whether or not this component is showing rear layout at startup.
+| `app:fv_animateDesignLayoutOnly="false"` | true, animate front and rear layouts from settings + child views; false, exclude all layouts and animate _only_ child views from design layout if any. (This attribute cannot be changed at runtime).
+| `app:fv_animationDuration="100"` | Set the main animation duration.
+| `app:fv_anticipateInAnimationTime="0"` | Anticipate the beginning of InAnimation, this time is already subtracted from the main duration (new delay is: main duration - anticipation time).
+| `app:fv_enableInitialAnimation="false"` | Whether or not the initial animation should start at the beginning.
+| `app:fv_initialLayoutAnimation="@anim/scale_up"` | Starting animation.
+| `app:fv_initialLayoutAnimationDuration="250"` | Starting animation duration.
+| `app:fv_frontLayout="@layout/flipview_front"` | Front view layout resource (for checked state -> false).
+| `app:fv_frontBackground="<OvalShape Drawable generated programmatically>"` | Front drawable resource (for checked state -> false).
+| `app:fv_frontBackgroundColor="<Color.GRAY set programmatically>"` | Front view color resource (for checked state -> false).
+| `app:fv_frontImage="@null"` | Front image resource (for checked state -> false).
+| `app:fv_frontImagePadding="0dp"` | Front image padding.
+| `app:fv_rearLayout="@layout/flipview_rear"` | Rear view layout resource (for checked state -> true).
+| `app:fv_rearBackground="<OvalShape Drawable generated programmatically>"` | Rear drawable resource (for checked state -> true).
+| `app:fv_rearBackgroundColor="Color.GRAY set programmatically"` | Rear view color resource (for checked state -> true).
+| `app:fv_rearImage="@drawable/ic_action_done"` | Rear accept image resource.
+| `app:fv_rearImagePadding="0dp"` | Rear image padding.
+| `app:fv_animateRearImage="true"` | Whether or not the rear image should animate.
+| `app:fv_rearImageAnimation="@anim/scale_up"` | Rear image animation.
+| `app:fv_rearImageAnimationDuration="150"` | Rear image animation duration.
+| `app:fv_rearImageAnimationDelay="animationDuration"` | Rear image animation delay (depends the animation/duration it can be smart setting a specific delay. For Gmail effect set this to 0).
 
 |**Not changeable values** (in ms)||
 |:---|:---|

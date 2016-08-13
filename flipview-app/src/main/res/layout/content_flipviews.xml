@@ -47,12 +47,12 @@
 				android:padding="4dp"
 				android:clipToPadding="false"
 				android:clickable="true"
-				app:checked="false"
-				app:enableInitialAnimation="true"
-				app:frontLayout="@layout/flipview_front_custom"
-				app:frontImage="@drawable/ic_add_shopping_cart_white_24dp"
-				app:rearLayout="@layout/flipview_rear_custom"
-				app:rearImageAnimationDelay="0"/>
+				app:fv_checked="false"
+				app:fv_enableInitialAnimation="true"
+				app:fv_frontLayout="@layout/flipview_front_custom"
+				app:fv_frontImage="@drawable/ic_add_shopping_cart_white_24dp"
+				app:fv_rearLayout="@layout/flipview_rear_custom"
+				app:fv_rearImageAnimationDelay="0"/>
 
 			<!-- FlipView like GMail with Text!
 				- Inner default initial animation (scale up)
@@ -73,13 +73,13 @@
 				android:padding="4dp"
 				android:clipToPadding="false"
 				android:clickable="true"
-				app:checked="false"
-				app:enableInitialAnimation="true"
-				app:frontLayout="@layout/flipview_front_custom_text"
-				app:frontBackground="@drawable/square_light"
-				app:rearLayout="@layout/flipview_rear_custom"
-				app:rearBackground="@drawable/square_light"
-				app:rearImageAnimation="@anim/grow_from_start_x_axis"/>
+				app:fv_checked="false"
+				app:fv_enableInitialAnimation="true"
+				app:fv_frontLayout="@layout/flipview_front_custom_text"
+				app:fv_frontBackground="@drawable/square_light"
+				app:fv_rearLayout="@layout/flipview_rear_custom"
+				app:fv_rearBackground="@drawable/square_light"
+				app:fv_rearImageAnimation="@anim/grow_from_start_x_axis"/>
 
 			<!-- As "@+id/flip_horizontal_oval_view_big"
 				- Higher duration to see the precision of the animations.
@@ -93,15 +93,15 @@
 				android:padding="4dp"
 				android:clipToPadding="false"
 				android:clickable="true"
-				app:checked="false"
-				app:enableInitialAnimation="true"
-				app:animationDuration="1000"
-				app:frontLayout="@layout/flipview_front_custom"
-				app:frontBackground="@drawable/circle_light"
-				app:frontImage="@drawable/ic_github_circle_white_24dp"
-				app:rearLayout="@layout/flipview_rear_custom"
-				app:rearBackground="@drawable/circle_light_transparent"
-				app:rearImageAnimationDuration="1000"/>
+				app:fv_checked="false"
+				app:fv_enableInitialAnimation="true"
+				app:fv_animationDuration="1000"
+				app:fv_frontLayout="@layout/flipview_front_custom"
+				app:fv_frontBackground="@drawable/circle_light"
+				app:fv_frontImage="@drawable/ic_github_circle_white_24dp"
+				app:fv_rearLayout="@layout/flipview_rear_custom"
+				app:fv_rearBackground="@drawable/circle_light_transparent"
+				app:fv_rearImageAnimationDuration="1000"/>
 
 		</LinearLayout>
 
@@ -116,10 +116,10 @@
 		android:outAnimation="@anim/shrink_to_middle_y_axis"
 		android:inAnimation="@anim/grow_from_middle_y_axis"
 		android:autoStart="true"
-		app:checked="false"
+		app:fv_checked="false"
 		android:flipInterval="8000"
-		app:animationDuration="500"
-		app:animateDesignLayoutOnly="true">
+		app:fv_animationDuration="500"
+		app:fv_animateDesignLayoutOnly="true">
 
 		<!-- First layout to flip -->
 		<FrameLayout
@@ -158,12 +158,12 @@
 					android:outAnimation="@anim/scale_down"
 					android:inAnimation="@anim/scale_up"
 					android:clickable="true"
-					app:checked="false"
-					app:enableInitialAnimation="true"
-					app:animationDuration="200"
-					app:frontBackground="@drawable/circle_light"
-					app:frontImage="@drawable/ic_account_circle_white_24dp"
-					app:rearImageAnimationDuration="200"/>
+					app:fv_checked="false"
+					app:fv_enableInitialAnimation="true"
+					app:fv_animationDuration="200"
+					app:fv_frontBackground="@drawable/circle_light"
+					app:fv_frontImage="@drawable/ic_account_circle_white_24dp"
+					app:fv_rearImageAnimationDuration="200"/>
 
 				<!--
 					- Custom initial animation & animation duration (fade)
@@ -186,16 +186,16 @@
 					android:inAnimation="@anim/grow_from_middle_y_axis"
 					android:autoStart="true"
 					android:clickable="true"
-					app:checked="false"
-					app:enableInitialAnimation="true"
-					app:initialLayoutAnimation="@anim/fade_in"
-					app:initialLayoutAnimationDuration="1000"
-					app:frontImage="@drawable/ic_cached_white_24dp"
-					app:frontBackground="@drawable/circle_light"
-					app:rearImage="@drawable/ic_cancel_white_24dp"
-					app:rearBackgroundColor="@android:color/holo_red_dark"
-					app:rearImageAnimationDuration="200"
-					app:rearImageAnimationDelay="0"/>
+					app:fv_checked="false"
+					app:fv_enableInitialAnimation="true"
+					app:fv_initialLayoutAnimation="@anim/fade_in"
+					app:fv_initialLayoutAnimationDuration="1000"
+					app:fv_frontImage="@drawable/ic_cached_white_24dp"
+					app:fv_frontBackground="@drawable/circle_light"
+					app:fv_rearImage="@drawable/ic_cancel_white_24dp"
+					app:fv_rearBackgroundColor="@android:color/holo_red_dark"
+					app:fv_rearImageAnimationDuration="200"
+					app:fv_rearImageAnimationDelay="0"/>
 
 				<!--
 					- Custom initial animation & animation duration (fade)
@@ -215,16 +215,16 @@
 					android:outAnimation="@anim/fade_out"
 					android:inAnimation="@anim/fade_in"
 					android:clickable="true"
-					app:checked="false"
-					app:enableInitialAnimation="true"
-					app:animationDuration="200"
-					app:anticipateInAnimationTime="120"
-					app:initialLayoutAnimation="@anim/fade_in"
-					app:initialLayoutAnimationDuration="1000"
-					app:frontImage="@drawable/ic_favorite_outline_white_24dp"
-					app:frontBackground="@drawable/circle_light"
-					app:rearImage="@drawable/ic_favorite_white_24dp"
-					app:animateRearImage="false"/>
+					app:fv_checked="false"
+					app:fv_enableInitialAnimation="true"
+					app:fv_animationDuration="200"
+					app:fv_anticipateInAnimationTime="120"
+					app:fv_initialLayoutAnimation="@anim/fade_in"
+					app:fv_initialLayoutAnimationDuration="1000"
+					app:fv_frontImage="@drawable/ic_favorite_outline_white_24dp"
+					app:fv_frontBackground="@drawable/circle_light"
+					app:fv_rearImage="@drawable/ic_favorite_white_24dp"
+					app:fv_animateRearImage="false"/>
 
 				<!--
 					- Not clickable!
@@ -243,8 +243,8 @@
 					android:padding="4dp"
 					android:clipToPadding="false"
 					android:clickable="false"
-					app:frontBackground="@drawable/circle_light_stroke"
-					app:frontImage="@drawable/ic_lock_white_24dp"/>
+					app:fv_frontBackground="@drawable/circle_light_stroke"
+					app:fv_frontImage="@drawable/ic_lock_white_24dp"/>
 
 				<android.support.v7.widget.AppCompatCheckBox
 					android:id="@+id/flag_enable"
@@ -292,15 +292,15 @@
 					android:inAnimation="@anim/slide_in_from_left"
 					android:outAnimation="@anim/slide_out_to_right"
 					android:clickable="true"
-					app:checked="true"
-					app:enableInitialAnimation="true"
-					app:initialLayoutAnimationDuration="400"
-					app:animationDuration="500"
-					app:anticipateInAnimationTime="150"
-					app:frontBackground="@drawable/square_light"
-					app:frontImage="@drawable/ic_exit_to_app_white_24dp"
-					app:rearBackground="@drawable/square_light"
-					app:animateRearImage="false"/>
+					app:fv_checked="true"
+					app:fv_enableInitialAnimation="true"
+					app:fv_initialLayoutAnimationDuration="400"
+					app:fv_animationDuration="500"
+					app:fv_anticipateInAnimationTime="150"
+					app:fv_frontBackground="@drawable/square_light"
+					app:fv_frontImage="@drawable/ic_exit_to_app_white_24dp"
+					app:fv_rearBackground="@drawable/square_light"
+					app:fv_animateRearImage="false"/>
 
 				<!--
 					- Animate Design Layout Only (don't use Layout and Drawables from library)
@@ -318,8 +318,8 @@
 					android:clickable="true"
 					android:inAnimation="@anim/grow_from_middle_y_axis"
 					android:outAnimation="@anim/shrink_to_middle_y_axis"
-					app:enableInitialAnimation="true"
-					app:animateDesignLayoutOnly="true">
+					app:fv_enableInitialAnimation="true"
+					app:fv_animateDesignLayoutOnly="true">
 
 					<ImageView
 						android:layout_width="wrap_content"
@@ -353,9 +353,9 @@
 					android:layout_width="@dimen/fv_mini"
 					android:layout_height="@dimen/fv_mini"
 					android:clickable="true"
-					app:checked="false"
-					app:enableInitialAnimation="true"
-					app:animateDesignLayoutOnly="true"
+					app:fv_checked="false"
+					app:fv_enableInitialAnimation="true"
+					app:fv_animateDesignLayoutOnly="true"
 					android:padding="4dp"
 					android:background="@drawable/square_light">
 

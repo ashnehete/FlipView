@@ -202,17 +202,17 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 		TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.FlipView, 0, 0);
 
 		//Flags
-		checked = a.getBoolean(R.styleable.FlipView_checked, false);
-		boolean startupAnimation = a.getBoolean(R.styleable.FlipView_enableInitialAnimation, false);
-		boolean animateDesignChildViewsOnly = a.getBoolean(R.styleable.FlipView_animateDesignLayoutOnly, false);
+		checked = a.getBoolean(R.styleable.FlipView_fv_checked, false);
+		boolean startupAnimation = a.getBoolean(R.styleable.FlipView_fv_enableInitialAnimation, false);
+		boolean animateDesignChildViewsOnly = a.getBoolean(R.styleable.FlipView_fv_animateDesignLayoutOnly, false);
 
 		if (!animateDesignChildViewsOnly) {
 			//FrontView
-			int frontLayout = a.getResourceId(R.styleable.FlipView_frontLayout, R.layout.flipview_front);
-			Drawable frontBackground = a.getDrawable(R.styleable.FlipView_frontBackground);
-			int frontBackgroundColor = a.getColor(R.styleable.FlipView_frontBackgroundColor, Color.GRAY);
-			int frontImage = a.getResourceId(R.styleable.FlipView_frontImage, 0);
-			frontImagePadding = (int) a.getDimension(R.styleable.FlipView_frontImagePadding, 0);
+			int frontLayout = a.getResourceId(R.styleable.FlipView_fv_frontLayout, R.layout.flipview_front);
+			Drawable frontBackground = a.getDrawable(R.styleable.FlipView_fv_frontBackground);
+			int frontBackgroundColor = a.getColor(R.styleable.FlipView_fv_frontBackgroundColor, Color.GRAY);
+			int frontImage = a.getResourceId(R.styleable.FlipView_fv_frontImage, 0);
+			frontImagePadding = (int) a.getDimension(R.styleable.FlipView_fv_frontImagePadding, 0);
 			setFrontLayout(frontLayout);
 			if (frontBackground == null)
 				setChildBackgroundColor(FRONT_VIEW_INDEX, frontBackgroundColor);
@@ -220,11 +220,11 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 			setFrontImage(frontImage);
 
 			//RearView
-			int rearLayout = a.getResourceId(R.styleable.FlipView_rearLayout, R.layout.flipview_rear);
-			Drawable rearBackground = a.getDrawable(R.styleable.FlipView_rearBackground);
-			int rearBackgroundColor = a.getColor(R.styleable.FlipView_rearBackgroundColor, Color.GRAY);
-			int rearImage = a.getResourceId(R.styleable.FlipView_rearImage, R.drawable.ic_action_done);
-			rearImagePadding = (int) a.getDimension(R.styleable.FlipView_rearImagePadding, 0);
+			int rearLayout = a.getResourceId(R.styleable.FlipView_fv_rearLayout, R.layout.flipview_rear);
+			Drawable rearBackground = a.getDrawable(R.styleable.FlipView_fv_rearBackground);
+			int rearBackgroundColor = a.getColor(R.styleable.FlipView_fv_rearBackgroundColor, Color.GRAY);
+			int rearImage = a.getResourceId(R.styleable.FlipView_fv_rearImage, R.drawable.ic_action_done);
+			rearImagePadding = (int) a.getDimension(R.styleable.FlipView_fv_rearImagePadding, 0);
 			addRearLayout(rearLayout);
 			if (rearBackground == null)
 				setChildBackgroundColor(REAR_VIEW_INDEX, rearBackgroundColor);
@@ -236,20 +236,20 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 		if (checked) flipSilently(true);
 
 		//Init main(Flip) animations
-		mainAnimationDuration = a.getInteger(R.styleable.FlipView_animationDuration, FLIP_DURATION);
-		rearImageAnimationDuration = a.getInteger(R.styleable.FlipView_rearImageAnimationDuration, REAR_IMAGE_ANIMATION_DURATION);
-		rearImageAnimationDelay = a.getInteger(R.styleable.FlipView_rearImageAnimationDelay, (int) mainAnimationDuration);
-		anticipateInAnimationTime = a.getInteger(R.styleable.FlipView_anticipateInAnimationTime, 0);
+		mainAnimationDuration = a.getInteger(R.styleable.FlipView_fv_animationDuration, FLIP_DURATION);
+		rearImageAnimationDuration = a.getInteger(R.styleable.FlipView_fv_rearImageAnimationDuration, REAR_IMAGE_ANIMATION_DURATION);
+		rearImageAnimationDelay = a.getInteger(R.styleable.FlipView_fv_rearImageAnimationDelay, (int) mainAnimationDuration);
+		anticipateInAnimationTime = a.getInteger(R.styleable.FlipView_fv_anticipateInAnimationTime, 0);
 		if (!isInEditMode()) {
 			//This also initialize the in/out animations
 			setMainAnimationDuration(mainAnimationDuration);
-			if (a.getBoolean(R.styleable.FlipView_animateRearImage, true))
-				setRearImageAnimation(a.getResourceId(R.styleable.FlipView_rearImageAnimation, 0));
+			if (a.getBoolean(R.styleable.FlipView_fv_animateRearImage, true))
+				setRearImageAnimation(a.getResourceId(R.styleable.FlipView_fv_rearImageAnimation, 0));
 		}
 
 		//Save initial animation settings
-		initialLayoutAnimationDuration = a.getInteger(R.styleable.FlipView_initialLayoutAnimationDuration, INITIAL_ANIMATION_DURATION);
-		setInitialLayoutAnimation(a.getResourceId(R.styleable.FlipView_initialLayoutAnimation, 0));
+		initialLayoutAnimationDuration = a.getInteger(R.styleable.FlipView_fv_initialLayoutAnimationDuration, INITIAL_ANIMATION_DURATION);
+		setInitialLayoutAnimation(a.getResourceId(R.styleable.FlipView_fv_initialLayoutAnimation, 0));
 		//Show initial cascade step animation when view is first rendered
 		if (startupAnimation && enableInitialAnimation && !isInEditMode()) {
 			animateLayout(getInitialLayoutAnimation());
