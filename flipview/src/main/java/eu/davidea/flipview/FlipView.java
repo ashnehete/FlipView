@@ -58,25 +58,25 @@ import android.widget.ViewFlipper;
  * Please, refer to those attributes documentation for more details.
  * <ul>
  * <li>The Views to flip can be many <b>ViewGroups</b> containing an ImageView/TextView or simply
- * more <b>Views</b> (preferable ImageView) or even a combination of these types.</br></br>
+ * more <b>Views</b> (preferable ImageView) or even a combination of these types.<br><br>
  * 1. In case of <b>ViewGroups</b> with an ImageView each, (if present) background drawable
  * and color are assigned to those ViewGroups and the image resources to those ImageViews.
- * In this case the entire ViewGroups (containing the ImageViews) will flip.</br>
+ * In this case the entire ViewGroups (containing the ImageViews) will flip.<br>
  * Choosing this option, when 2 ViewGroups are configured, a second animation is executed
- * on the rear ImageView after the first flip is consumed.</br>
- * <b>Note: </b>the library contains already the checked Drawable for the rear image!</br></br>
+ * on the rear ImageView after the first flip is consumed.<br>
+ * <b>Note: </b>the library contains already the checked Drawable for the rear image!<br><br>
  * 2. In case of <b>Views</b>, (if present) background drawable and color are assigned
- * to the main ViewGroup (the FlipView) and only the simple views will be shown in series.</br>
- * Choosing this option, no further animation will be performed on the rear Views.</br></br></li>
+ * to the main ViewGroup (the FlipView) and only the simple views will be shown in series.<br>
+ * Choosing this option, no further animation will be performed on the rear Views.<br><br></li>
  * <li>FlipView supports a {@link PictureDrawable} for SVG loading and assignment <i>front View
- * Only</i>. Remember to change the LayerType to {@link View#LAYER_TYPE_SOFTWARE}.</br></br></li>
- * <li>FlipView can born already flipped and enabled/disabled programmatically.</br></br></li>
+ * Only</i>. Remember to change the LayerType to {@link View#LAYER_TYPE_SOFTWARE}.<br><br></li>
+ * <li>FlipView can born already flipped and enabled/disabled programmatically.<br><br></li>
  * <li>If the custom layout is provided with a TextVIew instead of ImageView as first child,
  * custom text can be displayed. Having such TextView, you can assign any text and style for the
- * front View.</br></br></li>
+ * front View.<br><br></li>
  * <li>Another functionality is to assign, to the entire FlipView, an <b>initial animation</b>
  * (by default it's a Scale animation and not enabled). Different combinations of effects are
- * possible:</br>
+ * possible:<br>
  * For instance, having multiples FlipViews on the screen, this animation can be prepared for
  * simultaneous entry effect (all FlipViews will perform the animation at the same time) or
  * for a delayed entry effect (all FlipViews will perform the animation with step delay).</li>
@@ -88,7 +88,7 @@ import android.widget.ViewFlipper;
  *
  * @author Davide Steduto
  * @since 01/11/2015 Created
- * </br>06/04/2016 Enable/disable flipping programmatically
+ * <br>06/04/2016 Enable/disable flipping programmatically
  */
 @SuppressWarnings("unused")
 public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.OnClickListener {
@@ -312,7 +312,7 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	//******************
 
 	/**
-	 * Call this once to enable or disable DEBUG logs.</br>
+	 * Call this once to enable or disable DEBUG logs.<br>
 	 * DEBUG logs are disabled by default.
 	 *
 	 * @param enable true to show DEBUG logs, false to hide them.
@@ -340,7 +340,7 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Create a Scale animation programmatically.</br>
+	 * Create a Scale animation programmatically.<br>
 	 * Usage of this method helps rendering the page much faster
 	 * (it doesn't load the animation file from disk).
 	 *
@@ -364,7 +364,7 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Reset initial layout animation delay to a custom delay.</br>
+	 * Reset initial layout animation delay to a custom delay.<br>
 	 * This avoid to continuously increase the next step delay of the next FlipView on the screen!
 	 *
 	 * <b>Note: </b>call this method at the beginning of onCreate/onActivityCreated.
@@ -380,12 +380,12 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Stop and Reset layout animation after {@link #STOP_LAYOUT_ANIMATION_DELAY}.</br>
+	 * Stop and Reset layout animation after {@link #STOP_LAYOUT_ANIMATION_DELAY}.<br>
 	 * This gives the time to perform all entry animations but to stop further animations when
 	 * screen is fully rendered: ALL Views will not perform initial animation anymore
 	 * until a new reset.
 	 *
-	 * <b>Note: </b>the delay time has been identified at 1 second and half (1500ms).</br>
+	 * <b>Note: </b>the delay time has been identified at 1 second and half (1500ms).<br>
 	 * Call this method at the end of onCreate/onActivityCreated.
 	 *
 	 * @see #resetLayoutAnimationDelay()
@@ -464,9 +464,9 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Custom initial layout animation.</br>
-	 * <b>Note:</b> Duration, startOffset will be overridden by the current settings:</br>
-	 * duration = initialLayoutAnimationDuration;</br>
+	 * Custom initial layout animation.<br>
+	 * <b>Note:</b> Duration, startOffset will be overridden by the current settings:<br>
+	 * duration = initialLayoutAnimationDuration;<br>
 	 * startOffset = initialDelay += SCALE_STEP_DELAY.
 	 *
 	 * @param initialLayoutAnimation the new initial animation
@@ -576,9 +576,9 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Set the anticipation time for InAnimation: don't wait OutAnimation completion.</br>
-	 * Depends by the effect that user desires, he can anticipate the entrance of rear layout.</br>
-	 * New delay is: current {@link #mainAnimationDuration} - anticipation time.</br>
+	 * Set the anticipation time for InAnimation: don't wait OutAnimation completion.<br>
+	 * Depends by the effect that user desires, he can anticipate the entrance of rear layout.<br>
+	 * New delay is: current {@link #mainAnimationDuration} - anticipation time.<br>
 	 * Max value is the current mainAnimationDuration. Default value is 0.
 	 *
 	 * @param time The anticipation time in milliseconds
@@ -646,7 +646,7 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Flip the current View and display to the previous View with a delay.</br>
+	 * Flip the current View and display to the previous View with a delay.<br>
 	 * <p>Command ignored if the view is disabled.</p>
 	 *
 	 * @param delay any custom delay
@@ -662,7 +662,7 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Convenience method for layout that has only 2 child Views!</br>
+	 * Convenience method for layout that has only 2 child Views!<br>
 	 * Execute the flip animation with No delay.
 	 * <p>Command ignored if the view is disabled.</p>
 	 *
@@ -674,7 +674,7 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * Convenience method for layout that has only 2 child Views!</br>
+	 * Convenience method for layout that has only 2 child Views!<br>
 	 * Execute the flip animation with a custom delay.
 	 * <p>Command ignored if the view is disabled.</p>
 	 *
@@ -757,11 +757,11 @@ public class FlipView extends ViewFlipper implements SVGPictureDrawable, View.On
 	}
 
 	/**
-	 * This checks that the index is never negative or bigger than the actual child Views!</br>
-	 * - if negative: first child View id displayed;</br>
-	 * - if bigger than actual Views: last child View is displayed.</br></br>
-	 * <i>The logic is different than {@link #setDisplayedChild(int)} where:</i></br>
-	 * - if negative: last child View is displayed;</br>
+	 * This checks that the index is never negative or bigger than the actual child Views!<br>
+	 * - if negative: first child View id displayed;<br>
+	 * - if bigger than actual Views: last child View is displayed.<br><br>
+	 * <i>The logic is different than {@link #setDisplayedChild(int)} where:</i><br>
+	 * - if negative: last child View is displayed;<br>
 	 * - if bigger than actual Views: first child View is displayed.
 	 *
 	 * @param whichChild the index of the child View to display
